@@ -1,5 +1,8 @@
-class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :update, :destroy]
+# frozen_string_literal: true
+
+class GamesController < OpenReadController
+  before_action :set_game, only: %i[show update destroy]
+  skip_before_action :authenticate, only: %i[highscores]
 
   # GET /games
   def index
@@ -8,14 +11,21 @@ class GamesController < ApplicationController
     render json: @games
   end
 
-  # GET /games/1
+  # GET /games/highscores
+  def highscores
+    @games = Game.order(score: :desc).limit(10)
+
+    render json: @games
+  end
+
+  # GET /games/:id
   def show
     render json: @game
   end
 
   # POST /games
   def create
-    @game = Game.new(game_params)
+    @game = current_user.games.new(game_params)
 
     if @game.save
       render json: @game, status: :created, location: @game
@@ -39,13 +49,14 @@ class GamesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_game
-      @game = Game.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def game_params
-      params.require(:game).permit(:score, :player)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_game
+    @game = current_user.games.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def game_params
+    params.require(:game).permit(:score, :player)
+  end
 end

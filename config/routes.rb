@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   # RESTful routes
   resources :games, except: %i[new edit destroy update]
+  get '/highscores' => 'games#highscores'
 end
