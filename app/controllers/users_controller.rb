@@ -58,6 +58,11 @@ class UsersController < ProtectedController
     end
   end
 
+  # PATCH '/users/handle'
+  def changehandle
+    # will change the handle of user
+  end
+
   private
 
   def user_creds
