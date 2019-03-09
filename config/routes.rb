@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   patch '/change-password' => 'users#changepw'
   get '/users' => 'users#index'
   get '/users/:handle' => 'users#show'
+
+  # RESTful routes
+  resources :games, except: %i[new edit destroy update]
 end

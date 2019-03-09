@@ -3,5 +3,5 @@
 class UserSerializer < ActiveModel::Serializer
   # attributes :id
   # attributes :email
-  attributes :handle
+  attributes :handle, :games
 end
