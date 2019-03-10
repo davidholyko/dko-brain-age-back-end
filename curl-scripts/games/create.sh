@@ -7,8 +7,7 @@ curl "http://localhost:4741/games" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "game": {
-      "score": "'"${SCORE}"'",
-      "player": "'"${PLAYER}"'"
+      "score": "'"${SCORE}"'"
     }
   }'
 

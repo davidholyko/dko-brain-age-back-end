@@ -57,6 +57,6 @@ class GamesController < OpenReadController
 
   # Only allow a trusted parameter "white list" through.
   def game_params
-    params.require(:game).permit(:score, :player)
+    params.require(:game).permit(:score)
   end
 end
