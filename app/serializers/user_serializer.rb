@@ -3,4 +3,5 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :handle
   attributes :games
+  attributes :suggestions
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_09_184337) do
+ActiveRecord::Schema.define(version: 2019_03_11_162741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 2019_03_09_184337) do
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
+  create_table "suggestions", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "suggestion_id"
+    t.index ["suggestion_id"], name: "index_suggestions_on_suggestion_id"
+    t.index ["user_id"], name: "index_suggestions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "token", null: false
@@ -48,4 +58,6 @@ ActiveRecord::Schema.define(version: 2019_03_09_184337) do
   add_foreign_key "examples", "users"
   add_foreign_key "games", "games"
   add_foreign_key "games", "users"
+  add_foreign_key "suggestions", "suggestions"
+  add_foreign_key "suggestions", "users"
 end

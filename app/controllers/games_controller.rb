@@ -7,11 +7,10 @@ class GamesController < OpenReadController
   # GET /games
   def index
     @games = Game.all
-
     render json: @games
   end
 
-  # GET /games/highscores
+  # GET /highscores
   def highscores
     @games = Game.order(score: :desc).limit(10)
 

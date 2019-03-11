@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :suggestions
   # RESTful routes
   resources :examples, except: %i[new edit]
 
@@ -13,7 +14,10 @@ Rails.application.routes.draw do
   get '/users/:handle' => 'users#show'
   get '/users/handle' => 'users#changehandle'
 
-  # RESTful routes
-  resources :games, except: %i[new edit destroy update]
+  # Game RESTful routes
+  resources :games, except: %i[new edit update]
   get '/highscores' => 'games#highscores'
+
+  # Suggestions RESTful routes
+  resources :suggestions, except: %i[new edit]
 end
