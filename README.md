@@ -49,7 +49,7 @@ Planning:
 17. Get feedback, implment changes
 
 #### Initial wireframes and user stories
-![Desktop wireframe](https://imgur.com/gallery/5mzOn83 "Brain Age ERD + WireFrame")
+![ERD and Wireframe](https://i.imgur.com/PCbz2k0.jpg)
 
 1. As a user, I want to sign up.
 2. As a user, I want to sign in.
