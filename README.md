@@ -10,17 +10,18 @@ Go to https://davidholyko.github.io/dko-brain-age-front-end/ to interact with th
 
 ## Technologies used
 
-+ HTML
-+ CSS + SASS
-+ Javascript + jQuery
-+ Bootstrap
-+ Ruby
-+ Ruby on Rails
-+ Chart.js and mathjs
+- HTML
+- CSS + SASS
+- Javascript + jQuery
+- Bootstrap
+- Ruby
+- Ruby on Rails
+- Chart.js and mathjs
 
 ## Planning and Development
 
 Planning:
+
 1. Start coding
 2. Complete small goals that lead upto a big goal
 3. Make adjustments along the way
@@ -49,6 +50,7 @@ Planning:
 17. Get feedback, implment changes
 
 #### Initial wireframes and user stories
+
 ![ERD and Wireframe](https://i.imgur.com/PCbz2k0.jpg)
 
 1. As a user, I want to sign up.
@@ -57,10 +59,10 @@ Planning:
 4. As a user, I want to sign out.
 5. As a user, I want to play a game.
 6. As a user, I want to play a game without signing in
-6. As a user, I want to see my previous games.
-7. As a user, I want to go to all previous games.
-8. As a user, I want to go make a public suggestion.
-9. As a user, I want to go CRUD a public suggestion.
+7. As a user, I want to see my previous games.
+8. As a user, I want to go to all previous games.
+9. As a user, I want to go make a public suggestion.
+10. As a user, I want to go CRUD a public suggestion.
 
 ## Problem Solving Strategy
 
@@ -71,22 +73,27 @@ Planning:
 
 ## Unsolved Problems (Problem Working on at the time of editing this file)
 
-
 ## Future Direction (Super Stretch Goals)
-
 
 1. 3 2 1 Countdown before game starts
 2. query score by player
 3. my scores graph
 4. compare my score to queried player
 
-
 ## [License](LICENSE)
 
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
 1. All software code is licensed under GNU GPLv3. [ ] For commercial use or
-    alternative licensing, please contact legal@ga.co.
+   alternative licensing, please contact legal@ga.co.
 
 ## Acknowledgments
 
 Special thanks to Jennifer Meade, Erica Salling, Ben Jenkins, Toni Langley, Jordan Allain, Caleb Pearce, Naida Rosenberger, GA WDI-30, and everyone at General Assembly Boston.
+
+#### CORS issues
+
+Update Cors on Heroku
+
+```
+Heroku > Project > Settings > Reveal Config Vars > CLIENT_ORIGIN
+```
